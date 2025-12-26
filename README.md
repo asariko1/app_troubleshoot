@@ -1,2 +1,2 @@
 # app_troubleshoot
-just a demo to create a live AI bot to solve app related tehnical issues.
+This is a demonstration of a live AI assistant designed to troubleshoot common technical issues within the application.
