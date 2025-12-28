@@ -33,7 +33,7 @@ Guest can’t make reservations, view folio, use chat, view photos, but is alrea
 4.	If the correct name is already selected, tap on Unlink, and manually link the booking again on the GA Tool. Close and re-open the app to retest. 
 
 Guest has a grayed-out Reserve Now button with a “Your account is on hold” message: 
-1.	Ask: Is there a message “Your account is on hold”
+1.	Ask: "Is there a message as Your account is on hold”
 2.	If yes:
 a.	Refresh guest’s folio in Fidelio. Check their charging privileges. 
 b.	If they still can’t reserve on the app, IT will need to refresh/repush their folio. In the meantime, use Hybris IBT to make the necessary bookings for the guests. 
