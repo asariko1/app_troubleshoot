@@ -33,13 +33,10 @@ Guest can’t make reservations, view folio, use chat, view photos, but is alrea
 4.	If the correct name is already selected, tap on Unlink, and manually link the booking again on the GA Tool. Close and re-open the app to retest. 
 
 Guest has a grayed-out Reserve Now button with a “Your account is on hold” message: 
-1.	Ask: "Is there a message as Your account is on hold”
-2.	If yes:
-a.	Refresh guest’s folio in Fidelio. Check their charging privileges. 
-b.	If they still can’t reserve on the app, IT will need to refresh/repush their folio. In the meantime, use Hybris IBT to make the necessary bookings for the guests. 
-3.	If no:
-a.	Also check if the guest correctly connect to wifi and linked on GA Tool
-b.	Ask: if you would like me to tell the steps to connect to Wifi.
+
+1.	Refresh guest’s folio in Fidelio. Check their charging privileges. 
+2.	If they still can’t reserve on the app, IT will need to refresh/repush their folio. In the meantime, use Hybris IBT to make the necessary bookings for the guests. 
+3.	Also check if the guest correctly connect to wifi and linked on GA Tool
 
 Guest would like to use chat with their children: 
 1.	Please remind guests that for the company to comply with COPPA (Children’s Online Privacy Protection Rule), guests under 13 years old cannot create an account on the Royal App, and therefore cannot use chat. There isn’t a workaround for this. 
