@@ -4,16 +4,16 @@
   
 First steps on Day 1 so guests can use the Royal App: 
 1.	Turn on Airplane mode. 
-2.	On Settings > Wi-Fi, connect to WiFi-Guest-”SHIP_NAME” or connect via Seamless Wi-Fi on the Internet button on the Royal App. 
+2.	On Settings > Wifi, connect to WiFi-Guest-”SHIP_NAME” or connect via Seamless Wifi on the Internet button on the Royal App. 
 3.	Close the Royal App, re-open, and navigate to a bookable activity to see if the Reserve Now button is blue. 
 4.	If the Reserve Now button is gray, sign out and sign back in of the app. Reset the guest’s password on the Guest Account Admin Tool if they forgot it. 
 
 Guest has general connectivity issues – can’t sign in, make/view reservations, use chat, view folio, see shows: 
 1.	Confirm the steps above were followed. 
-2.	Ensure the device has no active VPN. For iPhones, it’s on Settings > General > VPN & Device Management. For Androids, it’s on Settings > Connections > More connection settings > VPN. 
-3.	On iPhones, on Settings > Wi-Fi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn Private Wi-Fi Address & Limit IP Address Tracking off. 
-4.	On Androids, on Settings > Connections > More connection settings > Private DNS > Turn off. 
-5.	On Androids, on Settings > Connections > Wi-Fi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Turn off Randomized MAC. 
+2.	Ensure the device has no active VPN. For iPhones, it’s on Settings > General > **VPN & Device Management**[VPN & Device Management]. For Androids, it’s on Settings > Connections > More connection settings > **VPN**[VPN]. 
+3.	On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn **Private Wifi** [Private Wifi] Address & **Limit IP Address** [Limit IP Address] Tracking off. 
+4.	On Androids, on Settings > Connections > More connection settings > **Private DNS** [Private DNS] > Turn off. 
+5.	On Androids, on Settings > Connections > Wifi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Turn off Randomized **MAC** [Trigger: MAC]. 
 6.	On Androids, on Settings > Apps > Royal > Storage > Clear data. 
 7.	On Androids, on Settings > General Management > Date & Time > Automatic Date & Time > Turn on. 
 8.	On Androids, on Settings > Apps > Google Play Services > check if it’s installed. Update from App details in store if necessary. 
@@ -25,18 +25,18 @@ Guest has general connectivity issues – can’t sign in, make/view reservation
 
 Please note the Royal App won’t work for pier add-on guests, or whose bookings are in waitlist status on AS-400, as some Friends & Family bookings are. 
 Guest can’t make reservations, view folio, use chat, view photos, but is already properly connected: 
-1.	On the GA Tool, enter the guest’s e-mail > tap on the blue link > Upcoming cruises > check if the correct name is 
+1.	On the **GA Tool** [Trigger: GA Tool], enter the guest’s e-mail > tap on the blue link > Upcoming cruises > check if the correct name is 
 
 2.	selected on the current cruise. If you can’t see a blue dot to select, inform AFDM and try logging in with another user. 
 3.	If multiple names on the same cruise among different bookings are selected, please un-select the incorrect name(s). 
 
-4.	If the correct name is already selected, tap on Unlink, and manually link the booking again on the GA Tool. Close and re-open the app to retest. 
+4.	If the correct name is already selected, tap on Unlink, and manually link the booking again on the **GA Tool** [Trigger: GA Tool]. Close and re-open the app to retest. 
 
 Guest has a grayed-out Reserve Now button with a “Your account is on hold” message: 
 
 1.	Refresh guest’s folio in Fidelio. Check their charging privileges. 
 2.	If they still can’t reserve on the app, IT will need to refresh/repush their folio. In the meantime, use Hybris IBT to make the necessary bookings for the guests. 
-3.	Also check if the guest correctly connect to wifi and linked on GA Tool
+3.	Also check if the guest correctly connect to wifi and linked on **GA Tool** [Trigger: GA Tool]
 
 Guest would like to use chat with their children: 
 1.	Please remind guests that for the company to comply with COPPA (Children’s Online Privacy Protection Rule), guests under 13 years old cannot create an account on the Royal App, and therefore cannot use chat. There isn’t a workaround for this. 
@@ -51,14 +51,14 @@ Guest is trying to book an activity for multiple guests but gets an error messag
 1.	That specific time slot is probably unavailable for their whole party. Check Hybris IBT to indicate to the guest which time slots are still available for booking that would accommodate their whole party. 
 
 Guest can’t enter a new password on the app after their password was reset on the Guest Account Admin Tool: 
-1.	On the GA Tool, ensure you see a successful green bar after resetting the account’s password. If not, try using a new password, using a different browser, using incognito mode, or clearing the browser’s cache. 
+1.	On the **GA Tool** [Trigger: GA Tool], ensure you see a successful green bar after resetting the account’s password. If not, try using a new password, using a different browser, using incognito mode, or clearing the browser’s cache. 
 2.	Sometimes the app will take several trials of entering the new password from the Admin Tool to finally let the guest enter their preferred password. If needed, reset the password again. 
 3.	An alternative is to login to their account on royalcaribbean.com/account, enter the password from the Admin Tool, and then enter the guest’s desired new password. 
 4.	If you need to rese the password again, do not use the one that you just entered. Pick a different new password.
 
 Guest can’t see chat messages, or can’t accept an invitation: 
 1.	If the chat screen just shows a circle spinning, check if the app version is the latest version available. If not, update it. 
-2.	Check if each guest is logging in with their own e-mail address, and their accounts are associated to the correct names on the GA Tool. 
+2.	Check if each guest is logging in with their own e-mail address, and their accounts are associated to the correct names on the **GA Tool** [Trigger: GA Tool]. 
 3.	Check if the device’s time & date are accurate. 
 4.	If an invitation couldn’t be accepted, delete the pending invitation from the other guest, ensure guests have the be found toggle on, and have the other guest invite them again. 
 5.	If Guest 1 accepted an invitation but Guest 2 still sees that guest grayed out as Invitation Pending, have both guests sign out of their apps. Have Guest 2 sign in with their account on Guest 1’s device (or another device). If allowed, invite Guest 1 again. 
@@ -70,7 +70,7 @@ Guest isn’t receiving notifications for chat:
 3.	Forget the WiFi-Guest-”SHIP_NAME” connection, go to login.com, and re-authenticate the guests under their Voom account or by choosing Use the app for free. 
 4.	If issue persists, delete and re-download the app. Please note there is a fleetwide known issue that some devices will still not display push/native chat notifications outside of the app. 
 I am sending a message, but person I am sending sees it like coming from someone else:
-1.	Please open the GA Tool (Guest Admin Tool)
+1.	Please open the **GA Tool** [Trigger: GA Tool] (Guest Admin Tool)
 2.	Enter the mail address of the person who was sending the message. Click the blue link.
 3.	Navigate to the upcoming cruises
 4.	And check if the correct name has been selected. If not select the correct name and save it.
@@ -81,12 +81,12 @@ Guest is in a suite and can’t use stateroom controls on the app:
 2.	However, there is a fleetwide known issue that most iPhones will get an error screen when tapping on “Stateroom” on the app. There are no troubleshooting steps to fix it 
 
 Guest can’t see their loyalty points or tier on the app: 
-1.	Search the C&A number on the GA Tool and see the quantity of points shown. If the app doesn’t display the same, check their email account on the app and look it up on the tool. 
+1.	Search the C&A number on the **GA Tool** [Trigger: GA Tool] and see the quantity of points shown. If the app doesn’t display the same, check their email account on the app and look it up on the tool. 
 2.	Confirm the correct C&A number is linked to their account. If it’s already correct, refresh the account: remove the C&A number, hit Save, and add it back. All data needs to match. 
 3.	If there is any name or DOB discrepancy between C&A number and guest account, please amend the guest account as necessary. If Siebel’s data is inaccurate, advise Loyalty Amb. 
 
 Guest sees a “dark room” message when trying to see photos: 
-1.	Ensure the correct name is linked on the GA Tool. If it is, unlink the booking, re-link and ask guests to wait 30 minutes. If other bookings for the current cruise are linked, unlink them. 
+1.	Ensure the correct name is linked on the **GA Tool**. If it is, unlink the booking, re-link and ask guests to wait 30 minutes. If other bookings for the current cruise are linked, unlink them. 
 2.	If the issue persists, request IT to restart the photograph server, and advise guests it will take a while between this restart and photos becoming available on the app. In the meantime, they can see their photos on the kiosks at the Photo Gallery. 
 3.	Ask guests to sign out and back in on the app. 
 

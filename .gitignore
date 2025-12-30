@@ -1,3 +1,5 @@
 helpdek_database/
 .env
 model_combination.txt
+chroma_db/
+__pycache__/
