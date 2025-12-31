@@ -11,9 +11,9 @@ First steps on Day 1 so guests can use the Royal App:
 Guest has general connectivity issues – can’t sign in, make/view reservations, use chat, view folio, see shows: 
 1.	Confirm the steps above were followed.
 2.	Ensure the device has no active VPN. 
-2.a For iPhones, it’s on Settings > General > **VPN & Device Management**[Trigger: VPN & Device Management] ![alt text]https://github.com/asariko1/app_troubleshoot/blob/main/images/iphone2.png 
+2.a For iPhones, it’s on Settings > General > **VPN & Device Management**[Trigger: VPN & Device Management] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png 
 2.b For Androids, it’s on Settings > Connections > More connection settings > **VPN**[Trigger: VPN] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png. 
-3.	On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn off **Private Wifi** [Private Wifi] Address & turn off **Limit IP Address** [Trigger: Limit IP Address] ![alt text]https://github.com/asariko1/app_troubleshoot/blob/main/images/iphone1.png
+3.	On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn off **Private Wifi** [Private Wifi] Address & turn off **Limit IP Address** [Trigger: Limit IP Address] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone1.png 
 4.	On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png > Turn off. 
 5.	On Androids, on Settings > Connections > Wifi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Instead of Randomized, select Device/Phone **MAC** [Trigger: MAC]. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png 
 6.	On Androids, on Settings > Apps > Royal > Storage > Clear data. 
