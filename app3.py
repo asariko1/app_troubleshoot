@@ -112,9 +112,24 @@ chain = (
 
 # --- 5. EXECUTION ---
 st.title("Royal App AI Support")
+st.markdown("I’d be happy to help you navigate the app or solve any technical hiccups you might be experiencing. My goal is to make sure your digital experience is as smooth as a calm sea! 🌊 (H2)")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
+
+  # --- PASTE THE WELCOME LOGIC HERE ---
+    welcome_message = (
+
+    "Greetings! 👑 I am RoyalBot, your dedicated tech-savvy concierge for the Royal App! 🚀 I'm here to ensure your digital experience is as smooth as a calm sea and absolutely majestic. ✨ Whether you need help **signing in**, **making reservations**, or getting your **chat to work**, I've got the tools to help! 🛠️"
+    "\n\n"
+    "To make sure I give you the perfect steps for your journey, are you currently using an **iPhone** or an **Android**? 📱"
+)
+    
+    # Add the welcome message as the first AI entry
+    st.session_state.chat_history.append(AIMessage(content=welcome_message))
+    # --- END OF WELCOME LOGIC ---
+
+
 
 for message in st.session_state.chat_history:
     role = "user" if isinstance(message, HumanMessage) else "assistant"
