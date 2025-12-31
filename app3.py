@@ -112,7 +112,7 @@ chain = (
 
 # --- 5. EXECUTION ---
 st.title("Royal App AI Support")
-st.markdown("I’d be happy to help you navigate the app or solve any technical hiccups you might be experiencing. My goal is to make sure your digital experience is as smooth as a calm sea! 🌊 (H2)")
+st.markdown("### I would be happy to help you navigate the app or solve any technical hiccups you might be experiencing. My goal is to make sure your digital experience is as smooth as a calm sea! 🌊")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
