@@ -10,20 +10,22 @@ First steps on Day 1 so guests can use the Royal App:
 
 Guest has general connectivity issues – can’t sign in, make/view reservations, use chat, view folio, see shows: 
 1.	Confirm the steps above were followed.
-2.	Ensure the device has no active VPN. 
-2.a For iPhones, it’s on Settings > General > **VPN & Device Management**[Trigger: VPN & Device Management] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png 
-2.b For Androids, it’s on Settings > Connections > More connection settings > **VPN**[Trigger: VPN] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png. 
-3.	On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn off **Private Wifi** [Private Wifi] Address & turn off **Limit IP Address** [Trigger: Limit IP Address] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone1.png 
-4.	On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png > Turn off. 
-5.	On Androids, on Settings > Connections > Wifi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Instead of Randomized, select Device/Phone **MAC** [Trigger: MAC]. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png 
-6.	On Androids, on Settings > Apps > Royal > Storage > Clear data. 
-7.	On Androids, on Settings > General Management > Date & Time > Automatic Date & Time > Turn on. 
-8.	On Androids, on Settings > Apps > Google Play Services > check if it’s installed. Update from App details in store if necessary. 
-9.	On iPhones, on Settings > Language & Region > Calendar > check if Gregorian is selected. 
-10.	If necessary, forget the WiFi-Guest-”SHIP_NAME” connection, and sign back in on login.com – either to their Voom package or tapping on Use the app for free. 
-11.	If the issue persists, turn off the device and back on. 
-12.	Ultimately, if needed please delete and re-download the app. 
-13.	If all above fails, have the guest log in on your own personal device, or another device from someone else in their party, to see if the issue is isolated to their device or their account. 
+2.	Ensure the device has no active VPN, no randomized MAC adress, No Limit IP Adress, No Private Wifi address
+3.  First we will ask if the user is using Android or iPhone device and we will move according to that.
+4.  On Androids, it’s on Settings > Connections > More connection settings > **VPN**[Trigger: VPN] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png. 
+5.	On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png > Turn off. 
+6.	On Androids, on Settings > Connections > Wifi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Instead of Randomized, select Device/Phone **MAC** [Trigger: MAC]. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png 
+7.	On Androids, on Settings > Apps > Royal > Storage > Clear data. 
+8.	On Androids, on Settings > General Management > Date & Time > Automatic Date & Time > Turn on. 
+9.	On Androids, on Settings > Apps > Google Play Services > check if it’s installed. Update from App details in store if necessary. 
+10. On iPhones, it’s on Settings > General > **VPN & Device Management**[Trigger: VPN & Device Management] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png 
+11. On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn off **Private Wifi** [Private Wifi] Address & turn off **Limit IP Address** [Trigger: Limit IP Address] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone1.png 
+12. This step we will ask the user if the problem solved or persist. If problem is not solved,
+12.	On iPhones, on Settings > Language & Region > Calendar > check if Gregorian is selected. 
+13.	If necessary, forget the WiFi-Guest-”SHIP_NAME” connection, and sign back in on login.com – either to their Voom package or tapping on Use the app for free. 
+14.	If the issue persists, turn off the device and back on. 
+15.	Ultimately, if needed please delete and re-download the app. 
+16.	If all above fails, have the guest log in on your own personal device, or another device from someone else in their party, to see if the issue is isolated to their device or their account. 
 
 Please note the Royal App won’t work for pier add-on guests, or whose bookings are in waitlist status on AS-400, as some Friends & Family bookings are. 
 Guest can’t make reservations, view folio, use chat, view photos, but is already properly connected: 
