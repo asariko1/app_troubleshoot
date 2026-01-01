@@ -198,31 +198,26 @@ if user_query := st.chat_input("How can I help?"):
         st.markdown(user_query)
     
     with st.chat_message("assistant"):
-
-       # Add a status spinner here
-        with st.chat_message("assistant"):
+        # This line must be indented 4 spaces
         with st.spinner("RoyalBot is thinking... 👑"):
             try:
-                # 1. Generate the response
+                # This line must be indented 8 spaces
                 response = chain.invoke({
                     "question": user_query,
                     "chat_history": st.session_state.chat_history
                 })
                 st.markdown(response)
 
-# --- Logging Logic ---
-
-                # 2. Log if it's a gap (using the list from the top)
                 if any(k.lower() in response.lower() for k in FAIL_KEYWORDS):
                     log_gap(user_query, response)
                     st.rerun()
 
             except Exception as e:
-                # 3. This block MUST follow the try block directly
+                # This must align with 'try'
                 if "429" in str(e):
-                    response = "I'm a bit overwhelmed with requests right now! 👑 Give me just a moment and try again. ✨"
+                    response = "I'm a bit overwhelmed with requests right now! 👑"
                 else:
-                    response = "I encountered a little hiccup. Could you try asking that again? 🛠️"
+                    response = "I encountered a little hiccup. 🛠️"
                 st.markdown(response)
 
 
