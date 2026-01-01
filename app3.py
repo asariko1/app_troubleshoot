@@ -21,6 +21,9 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
 
 
+# The list of phrases that signal the bot couldn't find an answer
+FAIL_KEYWORDS = ["Digital Manager", "I don't know", "not in the guide", "couldn't find"]
+
 # --- Adding Logging Function ---
 
 import csv
@@ -206,23 +209,22 @@ if user_query := st.chat_input("How can I help?"):
                 st.markdown(response)
 
 # --- NEW LOGGING LOGIC ---
-                # Define keywords that signal a 'failed' answer
-                fail_keywords = ["Digital Manager", "I don't know", "not in the guide", "couldn't find"]
+
+              fail_keywords = ["Digital Manager", "I don't know", "not in the guide", "couldn't find"]
                 
-                if any(keyword.lower() in response.lower() for keyword in fail_keywords):
-                    log_unanswered_question(user_query, response)
-                # -------------------------
-
-
-
+                if any(k.lower() in response.lower() for k in fail_keywords):
+                    log_gap(user_query, response)
+                    st.rerun()
 
             except Exception as e:
-                # If it still fails after 3 retries, show a nice message
+                # 3. ERROR HANDLING (Failure path)
                 if "429" in str(e):
                     response = "I'm a bit overwhelmed with requests right now! 👑 Give me just a moment and try again. ✨"
                 else:
                     response = "I encountered a little hiccup. Could you try asking that again? 🛠️"
+                
                 st.markdown(response)
-
+    
+    # 4. Update History
     st.session_state.chat_history.append(HumanMessage(content=user_query))
     st.session_state.chat_history.append(AIMessage(content=response))
