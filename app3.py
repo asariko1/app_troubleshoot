@@ -210,21 +210,23 @@ if user_query := st.chat_input("How can I help?"):
 
 # --- NEW LOGGING LOGIC ---
 
-              fail_keywords = ["Digital Manager", "I don't know", "not in the guide", "couldn't find"]
+            fail_keywords = ["Digital Manager", "I don't know", "not in the guide", "couldn't find"]
                 
                 if any(k.lower() in response.lower() for k in fail_keywords):
                     log_gap(user_query, response)
                     st.rerun()
+                # -------------------------------
 
             except Exception as e:
-                # 3. ERROR HANDLING (Failure path)
+                # 3. ERROR HANDLING
                 if "429" in str(e):
                     response = "I'm a bit overwhelmed with requests right now! 👑 Give me just a moment and try again. ✨"
                 else:
                     response = "I encountered a little hiccup. Could you try asking that again? 🛠️"
                 
                 st.markdown(response)
-    
+
+
     # 4. Update History
     st.session_state.chat_history.append(HumanMessage(content=user_query))
     st.session_state.chat_history.append(AIMessage(content=response))
