@@ -10,7 +10,9 @@ try:
 except ImportError:
     pass
 
-
+import csv
+import pandas as pd
+from datetime import datetime
 from tenacity import retry_if_exception_type
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
@@ -20,24 +22,18 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
 
-
-# The list of phrases that signal the bot couldn't find an answer
-FAIL_KEYWORDS = ["Digital Manager", "I don't know", "not in the guide", "couldn't find"]
-
-# --- Adding Logging Function ---
-
-import csv
-from datetime import datetime
+# --- LOGGING & KEYWORDS ---
+# Unified keyword list and function to log gaps
+FAIL_KEYWORDS = ["Digital Manager", "I don't know", "not in the guide", "couldn't find", "contact support"]
 
 def log_unanswered_question(question, response):
     # This creates (or appends to) a file called 'bot_gaps.csv'
-    file_exists = os.path.isfile('bot_gaps.csv')
-    with open('bot_gaps.csv', mode='a', newline='', encoding='utf-8') as file:
+    file_path = 'bot_gaps.csv'
+    file_exists = os.path.isfile(file_path)
+    with open(file_path, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        # Add a header if it's a new file
         if not file_exists:
             writer.writerow(['Timestamp', 'User Question', 'Bot Response'])
-        
         writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), question, response])
 
 # --- 2. CONFIG ---
@@ -57,41 +53,33 @@ def init_rag():
     embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=GOOGLE_API_KEY)
     vectorstore = Chroma.from_texts(texts=chunks, embedding=embeddings)
     
-    # 1. First, create the "base_model"
+    # Updated to latest stable Gemini 3 Flash (Dec 2025)
+    # Temperature 0.0 makes him straight to the point
     base_model = ChatGoogleGenerativeAI(
         model="gemini-2.5-flash", 
         google_api_key=GOOGLE_API_KEY,
-        temperature=0.2 
+        temperature=0.0 
     )
     
-    # 2. Now apply the retry logic to it
     model = base_model.with_retry(
         stop_after_attempt=3,
         wait_exponential_jitter=True 
     )
     
-    # 3. Return the modified model and the retriever
-    # k=7 means it looks at 7 parts of your guide instead of 5
     return model, vectorstore.as_retriever(search_kwargs={"k": 7})
 
 model, retriever = init_rag()
 
-
-# --- INSERT THE LOG VIEWER CODE HERE ---
-import pandas as pd
-import os
-
+# --- SIDEBAR LOG VIEWER ---
 with st.sidebar:
     st.title("🛠️ RoyalBot Dev Tools")
-    
     if st.checkbox("Show Knowledge Gaps"):
         st.write("Questions missing from your guide:")
-        
-        if os.path.exists('knowledge_gaps.csv'):
-            df_logs = pd.read_csv('knowledge_gaps.csv')
-            st.dataframe(df_logs, use_container_width=True)
+        if os.path.exists('bot_gaps.csv'):
+            df_logs = pd.read_csv('bot_gaps.csv')
+            st.dataframe(df_logs.iloc[::-1], use_container_width=True) # Newest first
             
-            with open('knowledge_gaps.csv', 'rb') as f:
+            with open('bot_gaps.csv', 'rb') as f:
                 st.download_button(
                     label="📥 Download CSV Logs",
                     data=f,
@@ -100,51 +88,29 @@ with st.sidebar:
                 )
         else:
             st.info("No gaps recorded yet. 👑")
-# --- END OF INSERT ---
-
 
 def get_context(input_data):
     docs = retriever.invoke(input_data["question"])
     return "\n\n".join(doc.page_content for doc in docs)
 
-# --- 4. THE ANTI-LOOP TEMPLATE ---
+# --- 4. THE CONCISE TECHNICAL TEMPLATE ---
 template = """
-You are "RoyalBot," the expert Support Agent for Royal App. 👑
+You are "RoyalBot," the expert Technical Support Specialist for Royal App. 👑
 
-# YOUR PERSONA:
-- You are not just a bot; you are a tech-savvy concierge. 
-- You are warm, encouraging, and professional.
-- ALWAYS use emojis (🚀, ✨, 🛠️, 👑) to keep the tone positive and high-end.
-- If the user is having a hard time, use empathetic phrases like "I understand how frustrating that can be, let's solve it together!"
+# OBJECTIVE:
+- Provide direct, technical, and extremely concise solutions.
+- DO NOT use introductory filler or pleasantries.
+- Answer immediately with the steps or facts.
 
-# TONE & STYLE:
-- Avoid being "robotic" or "flat." 
-- Use conversational transitions like "Great question!" or "I'd be happy to help with that."
-- Make your bullet points clear but friendly.
-
-# SMART ROUTING:
-- Check if the user mentioned their device (iOS/iPhone or Android). 
-- If the troubleshooting steps differ and you don't know their device yet, you MUST ask: "I want to make sure I give you the perfect steps! Are you using an iPhone or an Android?"
-
-# NEW: VISUAL AIDS (Rule 6):
-- If the 'Context' contains an image link (e.g., ![Icon](url)), you MUST include it in your response to help the user visualize the step. 
-- Place the image directly below the text description of that step.
+# RULES:
+1. BREVITY: Keep responses under 4 sentences unless listing complex steps.
+2. SOURCE ONLY: Use ONLY the 'Context' below. If info is missing, say: "Information not found. Please contact the Digital Manager."
+3. DEVICE CHECK: If steps differ for iOS/Android and you don't know their device, ask: "Are you on iPhone or Android?" and STOP.
+4. NO FOLLOW-UPS: Never ask "Is there anything else?" or "Would you like me to show you...". Just answer and stop.
+5. VISUALS: If 'Context' has an image link (e.g. ![Icon](url)), include it directly below the text for that step.
 
 
 
-# THE BOLD TRIGGER RULE:
-- I have marked tools in *Bold Text*.
-- IMPORTANT: Check the 'Chat History' before asking a follow-up.
-- DO NOT ask "Would you like me to show you how to update..." IF:
-    1. The user just said "Yes", "Sure", or "Please". In this case, just give the instructions!
-    2. You already asked this exact question in the very last message.
-- ONLY ask the follow-up if it is a brand new topic
-
-# CONVERSATION GUIDELINES:
-1. GREETINGS: Respond warmly and introduce yourself as RoyalBot.
-2. TROUBLESHOOTING: Use ONLY the 'Context from Guide' below for facts.
-3. NO HALLUCINATIONS: Refer to the Digital Manager if the info is missing.
-4. If you dont know an answer of a question, please tell refer to "Digital Manager"
 
 
 Chat History:
@@ -169,58 +135,50 @@ chain = (
 
 # --- 5. EXECUTION ---
 st.title("Royal App AI Support")
-st.markdown("### I would be happy to help you navigate the app or solve any technical hiccups you might be experiencing. My goal is to make sure your digital experience is as smooth as a calm sea! 🌊")
+st.markdown("### Technical support at your fingertips. 🌊")
 
+# --- WELCOME LOGIC (FIXED: Only appends once) ---
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
-
-  # --- PASTE THE WELCOME LOGIC HERE ---
     welcome_message = (
-
-    "Greetings! 👑 I am RoyalBot, your dedicated tech-savvy concierge for the Royal App! 🚀 I'm here to ensure your digital experience is as smooth as a calm sea and absolutely majestic. ✨ Whether you need help **signing in**, **making reservations**, or getting your **chat to work**, I've got the tools to help! 🛠️"
-    "\n\n"
-    "To make sure I give you the perfect steps for your journey, are you currently using an **iPhone** or an **Android**? 📱"
-)
-    
-    # Add the welcome message as the first AI entry
+        "Greetings! 👑 I am RoyalBot, your technical concierge. 🚀 I can help with **signing in**, **reservations**, or **chat issues**. 🛠️"
+        "\n\n"
+        "To provide the correct steps, are you using an **iPhone** or an **Android**? 📱"
+    )
     st.session_state.chat_history.append(AIMessage(content=welcome_message))
-    # --- END OF WELCOME LOGIC ---
 
-
-
+# Display history
 for message in st.session_state.chat_history:
     role = "user" if isinstance(message, HumanMessage) else "assistant"
     with st.chat_message(role):
         st.markdown(message.content)
 
+# Chat Input & Logic
 if user_query := st.chat_input("How can I help?"):
     with st.chat_message("user"):
         st.markdown(user_query)
     
     with st.chat_message("assistant"):
-        # This line must be indented 4 spaces
         with st.spinner("RoyalBot is thinking... 👑"):
             try:
-                # This line must be indented 8 spaces
                 response = chain.invoke({
                     "question": user_query,
                     "chat_history": st.session_state.chat_history
                 })
                 st.markdown(response)
 
+                # NEW LOGGING LOGIC
                 if any(k.lower() in response.lower() for k in FAIL_KEYWORDS):
-                    log_gap(user_query, response)
+                    log_unanswered_question(user_query, response)
                     st.rerun()
 
             except Exception as e:
-                # This must align with 'try'
                 if "429" in str(e):
-                    response = "I'm a bit overwhelmed with requests right now! 👑"
+                    response = "System busy. 👑 Please wait a moment."
                 else:
                     response = "I encountered a little hiccup. 🛠️"
                 st.markdown(response)
 
-
-    # 4. Update History
+    # Update History
     st.session_state.chat_history.append(HumanMessage(content=user_query))
     st.session_state.chat_history.append(AIMessage(content=response))
