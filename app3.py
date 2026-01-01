@@ -10,6 +10,8 @@ try:
 except ImportError:
     pass
 
+
+from tenacity import retry_if_exception_type
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -17,6 +19,23 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
+
+
+# --- Adding Logging Function ---
+
+import csv
+from datetime import datetime
+
+def log_unanswered_question(question, response):
+    # This creates (or appends to) a file called 'bot_gaps.csv'
+    file_exists = os.path.isfile('bot_gaps.csv')
+    with open('bot_gaps.csv', mode='a', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        # Add a header if it's a new file
+        if not file_exists:
+            writer.writerow(['Timestamp', 'User Question', 'Bot Response'])
+        
+        writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), question, response])
 
 # --- 2. CONFIG ---
 load_dotenv()
@@ -28,24 +47,58 @@ def init_rag():
     with open("helpdesk_guides.txt", "r", encoding="utf-8") as file:
         content = file.read()
 
-    # Smaller chunks with more overlap = higher accuracy for specific names like 'GA Tool'
+    # Smaller chunks with more overlap = higher accuracy
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=150)
     chunks = text_splitter.split_text(content)
     
     embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004", google_api_key=GOOGLE_API_KEY)
     vectorstore = Chroma.from_texts(texts=chunks, embedding=embeddings)
     
-    # Switched to Gemini 2.5 Flash for better personality/stability
-    model = ChatGoogleGenerativeAI(
+    # 1. First, create the "base_model"
+    base_model = ChatGoogleGenerativeAI(
         model="gemini-2.5-flash", 
         google_api_key=GOOGLE_API_KEY,
-        temperature=0.2 # Lower temperature = higher accuracy
+        temperature=0.2 
     )
     
+    # 2. Now apply the retry logic to it
+    model = base_model.with_retry(
+        stop_after_attempt=3,
+        wait_exponential_jitter=True 
+    )
+    
+    # 3. Return the modified model and the retriever
     # k=7 means it looks at 7 parts of your guide instead of 5
     return model, vectorstore.as_retriever(search_kwargs={"k": 7})
 
 model, retriever = init_rag()
+
+
+# --- INSERT THE LOG VIEWER CODE HERE ---
+import pandas as pd
+import os
+
+with st.sidebar:
+    st.title("🛠️ RoyalBot Dev Tools")
+    
+    if st.checkbox("Show Knowledge Gaps"):
+        st.write("Questions missing from your guide:")
+        
+        if os.path.exists('knowledge_gaps.csv'):
+            df_logs = pd.read_csv('knowledge_gaps.csv')
+            st.dataframe(df_logs, use_container_width=True)
+            
+            with open('knowledge_gaps.csv', 'rb') as f:
+                st.download_button(
+                    label="📥 Download CSV Logs",
+                    data=f,
+                    file_name=f"royal_gaps_{datetime.now().strftime('%Y%m%d')}.csv",
+                    mime='text/csv'
+                )
+        else:
+            st.info("No gaps recorded yet. 👑")
+# --- END OF INSERT ---
+
 
 def get_context(input_data):
     docs = retriever.invoke(input_data["question"])
@@ -88,6 +141,7 @@ You are "RoyalBot," the expert Support Agent for Royal App. 👑
 1. GREETINGS: Respond warmly and introduce yourself as RoyalBot.
 2. TROUBLESHOOTING: Use ONLY the 'Context from Guide' below for facts.
 3. NO HALLUCINATIONS: Refer to the Digital Manager if the info is missing.
+4. If you dont know an answer of a question, please tell refer to "Digital Manager"
 
 
 Chat History:
@@ -141,11 +195,34 @@ if user_query := st.chat_input("How can I help?"):
         st.markdown(user_query)
     
     with st.chat_message("assistant"):
-        response = chain.invoke({
-            "question": user_query,
-            "chat_history": st.session_state.chat_history
-        })
-        st.markdown(response)
-    
+
+       # Add a status spinner here
+        with st.spinner("RoyalBot is thinking... 👑"):
+            try:
+                response = chain.invoke({
+                    "question": user_query,
+                    "chat_history": st.session_state.chat_history
+                })
+                st.markdown(response)
+
+# --- NEW LOGGING LOGIC ---
+                # Define keywords that signal a 'failed' answer
+                fail_keywords = ["Digital Manager", "I don't know", "not in the guide", "couldn't find"]
+                
+                if any(keyword.lower() in response.lower() for keyword in fail_keywords):
+                    log_unanswered_question(user_query, response)
+                # -------------------------
+
+
+
+
+            except Exception as e:
+                # If it still fails after 3 retries, show a nice message
+                if "429" in str(e):
+                    response = "I'm a bit overwhelmed with requests right now! 👑 Give me just a moment and try again. ✨"
+                else:
+                    response = "I encountered a little hiccup. Could you try asking that again? 🛠️"
+                st.markdown(response)
+
     st.session_state.chat_history.append(HumanMessage(content=user_query))
     st.session_state.chat_history.append(AIMessage(content=response))
