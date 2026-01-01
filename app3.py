@@ -33,7 +33,7 @@ def bold_important_words(text):
     for word in BOLD_KEYWORDS:
         # This replaces the word with a bold version (e.g., "Sign In" -> "*Sign In*")
         # .replace is case-sensitive, so ensure your list matches or use regex for advanced matching
-        text = text.replace(word, f"*{word}*")
+        text = text.replace(word, f"**{word}**")
     return text
 
 
