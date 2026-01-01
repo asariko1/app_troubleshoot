@@ -20,6 +20,7 @@ Guest has general connectivity issues – can’t sign in, make/view reservation
 9.	On Androids, on Settings > Apps > Google Play Services > check if it’s installed. Update from App details in store if necessary. 
 10. On iPhones, it’s on Settings > General > **VPN & Device Management**[Trigger: VPN & Device Management] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png 
 11. On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn off **Private Wifi** [Private Wifi] Address & turn off **Limit IP Address** [Trigger: Limit IP Address] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone1.png 
+12. On iPhones Private Relay needs to be turned off.
 12. This step we will ask the user if the problem solved or persist. If problem is not solved,
 12.	On iPhones, on Settings > Language & Region > Calendar > check if Gregorian is selected. 
 13.	If necessary, forget the WiFi-Guest-”SHIP_NAME” connection, and sign back in on login.com – either to their Voom package or tapping on Use the app for free. 

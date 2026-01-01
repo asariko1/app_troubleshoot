@@ -26,6 +26,17 @@ from langchain_core.messages import HumanMessage, AIMessage
 # Unified keyword list and function to log gaps
 FAIL_KEYWORDS = ["Digital Manager", "I don't know", "not in the guide", "couldn't find", "contact support"]
 
+# Words you want to always appear in **Bold**
+BOLD_KEYWORDS = ["Sign In", "Reservation", "Digital Manager", "Settings", "iPhone", "Android", "VPN", "MAC", "Limit IP Adress", "Private WIfi", "GA Tool", "Private Relay"]
+
+def bold_important_words(text):
+    for word in BOLD_KEYWORDS:
+        # This replaces the word with a bold version (e.g., "Sign In" -> "*Sign In*")
+        # .replace is case-sensitive, so ensure your list matches or use regex for advanced matching
+        text = text.replace(word, f"*{word}*")
+    return text
+
+
 def log_unanswered_question(question, response):
     # This creates (or appends to) a file called 'bot_gaps.csv'
     file_path = 'bot_gaps.csv'
@@ -165,6 +176,10 @@ if user_query := st.chat_input("How can I help?"):
                     "question": user_query,
                     "chat_history": st.session_state.chat_history
                 })
+
+# --- APPLY BOLDING HERE ---
+                response = bold_important_words(response)
+
                 st.markdown(response)
 
                 # NEW LOGGING LOGIC
