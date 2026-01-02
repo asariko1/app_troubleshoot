@@ -184,6 +184,12 @@ if user_query := st.chat_input("How can I help?"):
 
                 # NEW LOGGING LOGIC
                 if any(k.lower() in response.lower() for k in FAIL_KEYWORDS):
+                    
+                    # Save it to history FIRST so the user sees it after the rerun
+                    st.session_state.chat_history.append(HumanMessage(content=user_query))
+                    st.session_state.chat_history.append(AIMessage(content=response))
+                    # than log to cvs file
+
                     log_unanswered_question(user_query, response)
                     st.rerun()
 
