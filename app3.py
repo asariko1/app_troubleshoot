@@ -110,13 +110,13 @@ You are "RoyalBot," the expert Technical Support Specialist for Royal App. 👑
 
 # OBJECTIVE:
 - Provide direct, technical, and extremely concise solutions.
-- DO NOT use introductory filler or pleasantries.
-- Answer immediately with the steps or facts.
+- Only ask about the user's device (iPhone/Android) IF the troubleshooting steps in the 'Context' are different for each platform.
+- If the steps are the same for both, just provide the answer immediately.
 
 # RULES:
 1. BREVITY: Keep responses under 4 sentences unless listing complex steps.
 2. SOURCE ONLY: Use ONLY the 'Context' below. If info is missing, say: "Information not found. Please contact the Digital Manager."
-3. DEVICE CHECK: If steps differ for iOS/Android and you don't know their device, ask: "Are you on iPhone or Android?" and STOP.
+3. DEVICE CHECK: If steps differ for iOS/Android and you don't know their device, ask: "Are you on iPhone or Android?"
 4. NO FOLLOW-UPS: Never ask "Is there anything else?" or "Would you like me to show you...". Just answer and stop.
 5. VISUALS: If 'Context' has an image link (e.g. ![Icon](url)), include it directly below the text for that step.
 
@@ -154,7 +154,7 @@ if "chat_history" not in st.session_state:
     welcome_message = (
         "Greetings! 👑 I am RoyalBot, your technical concierge. 🚀 I can help with **signing in**, **reservations**, or **chat issues**. 🛠️"
         "\n\n"
-        "To provide the correct steps, are you using an **iPhone** or an **Android**? 📱"
+        
     )
     st.session_state.chat_history.append(AIMessage(content=welcome_message))
 

@@ -12,14 +12,14 @@ Guest has general connectivity issues – can’t sign in, make/view reservation
 1.	Confirm the steps above were followed.
 2.	Ensure the device has no active VPN, no randomized MAC adress, No Limit IP Adress, No Private Wifi address
 3.  First we will ask if the user is using Android or iPhone device and we will move according to that.
-4.  On Androids, it’s on Settings > Connections > More connection settings > **VPN**[Trigger: VPN] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png. 
-5.	On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png > Turn off. 
+4.  On Androids, it’s on Settings > Connections > More connection settings > **VPN**[Trigger: VPN] ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png)
+5.	On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png) > Turn off. 
 6.	On Androids, on Settings > Connections > Wifi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Instead of Randomized, select Device/Phone **MAC** [Trigger: MAC]. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png 
 7.	On Androids, on Settings > Apps > Royal > Storage > Clear cash and data. 
 8.	On Androids, on Settings > General Management > Date & Time > Automatic Date & Time > Turn on. 
 9.	On Androids, on Settings > Apps > Google Play Services > check if it’s installed. Update from App details in store if necessary. 
-10. On iPhones, it’s on Settings > General > **VPN & Device Management**[Trigger: VPN & Device Management] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png 
-11. On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn off **Private Wifi** [Private Wifi] Address & turn off **Limit IP Address** [Trigger: Limit IP Address] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone1.png 
+10. On iPhones, it’s on Settings > General > **VPN & Device Management**[Trigger: VPN & Device Management] ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png) 
+11. On iPhones, on Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ > turn off **Private Wifi** [Private Wifi] Address & turn off **Limit IP Address** [Trigger: Limit IP Address] ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone1.png)
 12. On iPhones Private Relay needs to be turned off.
 12. This step we will ask the user if the problem solved or persist. If problem is not solved,
 12.	On iPhones, on Settings > Language & Region > Calendar > check if Gregorian is selected. 
@@ -75,7 +75,7 @@ Guest isn’t receiving notifications for chat:
 3.	Forget the WiFi-Guest-”SHIP_NAME” connection, go to login.com, and re-authenticate the guests under their Voom account or by choosing Use the app for free. 
 4.	If issue persists, delete and re-download the app. Please note there is a fleetwide known issue that some devices will still not display push/native chat notifications outside of the app. 
 I am sending a message, but person I am sending sees it like coming from someone else:
-1.	Please open the **GA Tool** [Trigger: GA Tool] (Guest Admin Tool)![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png 
+1.	Please open the **GA Tool** [Trigger: GA Tool] (Guest Admin Tool)![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png)
 2.	Enter the mail address of the person who was sending the message. Click the blue link.
 3.	Navigate to the upcoming cruises
 4.	And check if the correct name has been selected. If not select the correct name and save it.
@@ -91,7 +91,7 @@ Guest can’t see their loyalty points or tier on the app:
 3.	If there is any name or DOB discrepancy between C&A number and guest account, please amend the guest account as necessary. If Siebel’s data is inaccurate, advise Loyalty Amb. 
 
 Guest sees a “dark room” message when trying to see photos: 
-1.	Ensure the correct name is linked on the **GA Tool**. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png
+1.	Ensure the correct name is linked on the **GA Tool**. ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png)
 2.	Yhis process can up to 30 min.
 3.  If the issue persists, request IT to restart the photograph server, and advise guests it will take a while between this restart and photos becoming available on the app. In the meantime, 
 4.	Ask guests to sign out and back in on the app. 
@@ -127,7 +127,7 @@ If a guest leaves the desk without a resolution:
 •	Austria: 14 years or older.
 
 Guest can not see the map in the phone, also deck number shows as zero "0". This usually happens in android and the fix is :
-1.  On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png > Turn off. 
+1.  On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png) > Turn off. 
 2.  On Androids, on Settings > Apps > Royal > Storage > Clear cash and data. 
 
 How the guest can update the app to latest version?
