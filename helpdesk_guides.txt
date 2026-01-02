@@ -63,7 +63,7 @@ Guest can’t enter a new password on the app after their password was reset on 
 
 Guest can’t see chat messages, or can’t accept an invitation: 
 1.	If the chat screen just shows a circle spinning, check if the app version is the latest version available. If not, update it. 
-2.	Check if each guest is logging in with their own e-mail address, and their accounts are associated to the correct names on the **GA Tool** [Trigger: GA Tool]. 
+2.	Check if each guest is logging in with their own e-mail address, and their accounts are associated to the correct names on the **GA Tool** [Trigger: GA Tool]. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png 
 3.	Check if the device’s time & date are accurate. 
 4.	If an invitation couldn’t be accepted, delete the pending invitation from the other guest, ensure guests have the be found toggle on, and have the other guest invite them again. 
 5.	If Guest 1 accepted an invitation but Guest 2 still sees that guest grayed out as Invitation Pending, have both guests sign out of their apps. Have Guest 2 sign in with their account on Guest 1’s device (or another device). If allowed, invite Guest 1 again. 
@@ -75,7 +75,7 @@ Guest isn’t receiving notifications for chat:
 3.	Forget the WiFi-Guest-”SHIP_NAME” connection, go to login.com, and re-authenticate the guests under their Voom account or by choosing Use the app for free. 
 4.	If issue persists, delete and re-download the app. Please note there is a fleetwide known issue that some devices will still not display push/native chat notifications outside of the app. 
 I am sending a message, but person I am sending sees it like coming from someone else:
-1.	Please open the **GA Tool** [Trigger: GA Tool] (Guest Admin Tool)
+1.	Please open the **GA Tool** [Trigger: GA Tool] (Guest Admin Tool)![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png 
 2.	Enter the mail address of the person who was sending the message. Click the blue link.
 3.	Navigate to the upcoming cruises
 4.	And check if the correct name has been selected. If not select the correct name and save it.
@@ -91,9 +91,11 @@ Guest can’t see their loyalty points or tier on the app:
 3.	If there is any name or DOB discrepancy between C&A number and guest account, please amend the guest account as necessary. If Siebel’s data is inaccurate, advise Loyalty Amb. 
 
 Guest sees a “dark room” message when trying to see photos: 
-1.	Ensure the correct name is linked on the **GA Tool**. If it is, unlink the booking, re-link and ask guests to wait 30 minutes. If other bookings for the current cruise are linked, unlink them. 
-2.	If the issue persists, request IT to restart the photograph server, and advise guests it will take a while between this restart and photos becoming available on the app. In the meantime, they can see their photos on the kiosks at the Photo Gallery. 
-3.	Ask guests to sign out and back in on the app. 
+1.	Ensure the correct name is linked on the **GA Tool**. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png
+2.	Yhis process can up to 30 min.
+3.  If the issue persists, request IT to restart the photograph server, and advise guests it will take a while between this restart and photos becoming available on the app. In the meantime, 
+4.	Ask guests to sign out and back in on the app. 
+5.  Offer the guest that they can see their photos on the kiosks at the **Photo Gallery**. 
 
 Guest is a back-to-back cruiser and can’t check-in on the app: 
 1.	Check-in on the Royal App is only available up until 48 hours before embarkation and can only be done while connected to the guest’s own internet connection. It can’t be done while connected to WiFi-Guest-”SHIP_NAME”. 
@@ -127,3 +129,6 @@ If a guest leaves the desk without a resolution:
 Guest can not see the map in the phone, also deck number shows as zero "0". This usually happens in android and the fix is :
 1.  On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png > Turn off. 
 2.  On Androids, on Settings > Apps > Royal > Storage > Clear cash and data. 
+
+How the guest can update the app to latest version?
+1.  Simply check **Apple Store** or **Google Play Store** to update the app.
