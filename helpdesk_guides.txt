@@ -14,7 +14,7 @@ Guest has general connectivity issues – can’t sign in, make/view reservation
 3.  First we will ask if the user is using Android or iPhone device and we will move according to that.
 4.  On Androids, it’s on Settings > Connections > More connection settings > **VPN**[Trigger: VPN] ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png)
 5.	On Androids, on Settings > Connections > More connection settings > Private **DNS** [Trigger: DNS] ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png) > Turn off. 
-6.	On Androids, on Settings > Connections > Wifi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Instead of Randomized, select Device/Phone **MAC** [Trigger: MAC]. ![alt text]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png 
+6.	On Androids, on Settings > Connections > Wifi > tap on the settings of the WiFi-Guest-”SHIP_NAME” connection > Advanced > Instead of Randomized, select Device/Phone **MAC** [Trigger: MAC]. ![alt text](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png)
 7.	On Androids, on Settings > Apps > Royal > Storage > Clear cash and data. 
 8.	On Androids, on Settings > General Management > Date & Time > Automatic Date & Time > Turn on. 
 9.	On Androids, on Settings > Apps > Google Play Services > check if it’s installed. Update from App details in store if necessary. 
