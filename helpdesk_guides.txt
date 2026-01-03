@@ -10,8 +10,8 @@
 * [span_6](start_span)COPPA RULES: Guests under 13 cannot use chat[span_6](end_span). [span_7](start_span)Exceptions: Austria (14+), Germany, Hungary, Lithuania, Netherlands (16+)[span_7](end_span).
 * [span_8](start_span)TABLETS: The app does not support iPads or tablets; no troubleshooting is possible[span_8](end_span).
 * [span_9](start_span)LOGIN ISSUES: If issues persist, forget the WiFi-Guest connection and sign back in on login.com[span_9](end_span).
-* [span_10](start_span)FAILED DOWNLOADS: If the app won't download from the captive portal, reset the user's app download plan limit on the iCafe Dashboard[span_10](end_span)[span_11](end_span).
-* [span_11](start_span)APP UPDATES: Simply visit Apple's **App Store** or Google's **Play Store** to update your app to the latest version.
+* [span_10](start_span)FAILED DOWNLOADS: If the app won't download from the captive portal, reset the user's app download plan limit on the iCafe Dashboard[span_10](end_span)[span_10](end_span).
+* [span_11](start_span)APP UPDATES: Simply visit Apple's **App Store** or Google's **Play Store** to update your app to the latest version.[span_11](end_span).
 
 ### [CATEGORY: IPHONE / iOS ONLY]
 * [span_12](start_span)VPN SETTINGS: Go to Settings > General > VPN & Device Management[span_12](end_span). 
@@ -32,18 +32,19 @@
     5) Tap on the settings icon next to the active VPN.
     6) Turn off the toggle to disable the VPN temporarily.
 
-* [span_21](start_span)TURN OFF/REMOVE DNS: Navigate to Settings > Connections > More connection settings. [span_18](start_span)Ensure VPN is checked and Private DNS is turned Off[span_18](end_span). 
+* [span_21](start_span)TURN OFF/REMOVE DNS: Navigate to Settings > Connections > More connection settings. [span_18](start_span)Ensure VPN is checked and Private DNS is turned Off[span_21](end_span). 
   ![Android Settings]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png
-* [span_22](start_span)MAC ADDRESS: Go to Settings > Connections > Wifi > WiFi-Guest-”SHIP_NAME” > Advanced. [span_19](start_span)Change MAC type to "Device/Phone MAC" instead of Randomized[span_19](end_span). 
+* [span_22](start_span)MAC ADDRESS: Go to Settings > Connections > Wifi > WiFi-Guest-”SHIP_NAME” > Advanced. [span_19](start_span)Change MAC type to "Device/Phone MAC" instead of Randomized[span_22](end_span). 
   ![MAC](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png)
-* [span_23](start_span)APP STORAGE: Go to Settings > Apps > Royal > Storage and select "Clear cache and data"[span_20](end_span).
-* [span_24](start_span)DATE & TIME: Automatic Date & Time must be ON in Settings > General Management > Date & Time[span_21](end_span).
-* [span_25](start_span)MAP/DECK FIX: If maps show as "0" or blank, turn off Private DNS and Clear app storage[span_22](end_span).
-* [span_26](start_span)GOOGLE PLAY: Ensure Google Play Services is installed and updated[span_23](end_span).
-* OS REQUIREMENTS: Requires Android 7.0 or higher. [span_24](start_span)[span_25](start_span)Check in Settings > About phone > Software information[span_24](end_span)[span_25](end_span).
+* [span_23](start_span)APP STORAGE: Go to Settings > Apps > Royal > Storage and select "Clear cache and data"[span_23](end_span).
+* [span_24](start_span)DATE & TIME: Automatic Date & Time must be ON in Settings > General Management > Date & Time[span_24](end_span).
+* [span_25](start_span)MAP/DECK FIX: If maps show as "0" or blank, turn off Private DNS and Clear app storage[span_25](end_span).
+* [span_26](start_span)GOOGLE PLAY: Ensure Google Play Services is installed and updated[span_26](end_span).
+* [span_27](start_span)OS REQUIREMENTS: Requires Android 7.0 or higher[span_27](end_span).
+* [span_28](start_span)[span_25](start_span)Check in Settings > About phone > Software information[span_28](end_span).
 
 ### [CATEGORY: TOOLS & ADMIN]
-* [span_27](start_span)GA TOOL (Guest Admin Tool): Used to verify email links, upcoming cruises, and correct names[span_26](end_span). 
+* [span_29](start_span)GA TOOL (Guest Admin Tool): Used to verify email links, upcoming cruises, and correct names[span_29](end_span). 
   ![GA Tool](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png)
-* [span_28](start_span)UNLINKING: If the correct name is selected but the app fails, tap "Unlink" and manually link the booking again in the GA Tool[span_27](end_span).
-* [span_29](start_span)PHOTO ISSUES: If guests see a "dark room" message, check the GA Tool linkage and request an IT restart of the photograph server if necessary[span_28](end_span).
+* [span_30](start_span)UNLINKING: If the correct name is selected but the app fails, tap "Unlink" and manually link the booking again in the GA Tool[span_30](end_span).
+* [span_31](start_span)PHOTO ISSUES: If guests see a "dark room" message, check the GA Tool linkage and request an IT restart of the photograph server if necessary[span_31](end_span).
