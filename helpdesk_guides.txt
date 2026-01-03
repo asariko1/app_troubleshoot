@@ -1,50 +1,44 @@
-[SHIP_NAME: of the Seas | Last modified: November 25th, 2025 | Version: 1.71]
+[SHIP_NAME: of the Seas | Last modified: January 3rd, 2026 |
+Version: 1.8]
 
 ### [CATEGORY: GENERAL / ALL PLATFORMS]
-* [span_0](start_span)DAY 1 SETUP: Guests must turn on Airplane mode first[span_0](end_span).
-* [span_1](start_span)WIFI CONNECTION: Connect to WiFi-Guest-”SHIP_NAME” via Settings > Wifi or use the Seamless Wifi button in the Royal App[span_1](end_span).
-* [span_2](start_span)VALIDATION: Re-open the app and check if the "Reserve Now" button is blue[span_2](end_span).
-* [span_3](start_span)RE-LOGIN: If the button is gray, sign out and sign back into the app[span_3](end_span).
-* [span_4](start_span)PASSWORD RESET: Reset passwords via the Guest Account Admin Tool if forgotten[span_4](end_span).
-* [span_5](start_span)ACCOUNT HOLD: If a "Your account is on hold" message appears, refresh the guest's folio in Fidelio and check charging privileges[span_5](end_span).
-* [span_6](start_span)COPPA RULES: Guests under 13 cannot use chat[span_6](end_span). [span_7](start_span)Exceptions: Austria (14+), Germany, Hungary, Lithuania, Netherlands (16+)[span_7](end_span).
-* [span_8](start_span)TABLETS: The app does not support iPads or tablets; no troubleshooting is possible[span_8](end_span).
-* [span_9](start_span)LOGIN ISSUES: If issues persist, forget the WiFi-Guest connection and sign back in on login.com[span_9](end_span).
-* [span_10](start_span)FAILED DOWNLOADS: If the app won't download from the captive portal, reset the user's app download plan limit on the iCafe Dashboard[span_10](end_span)[span_10](end_span).
-* [span_11](start_span)APP UPDATES: Simply visit Apple's **App Store** or Google's **Play Store** to update your app to the latest version.[span_11](end_span).
+* [span_3](start_span)[span_0](start_span)DAY 1 SETUP: Guests must turn on Airplane mode first[span_0](end_span).[span_3](end_span)
+* [span_4](start_span)[span_1](start_span)WIFI CONNECTION: Connect to WiFi-Guest-”SHIP_NAME” via Settings > Wifi or use the Seamless Wifi button in the Royal App[span_1](end_span).[span_4](end_span)
+* [span_29](start_span)APP UPDATES: Simply visit Apple's App Store or Google Play Store to update your app to the latest version[span_29](end_span).
+* [span_5](start_span)[span_2](start_span)VALIDATION: Re-open the app and check if the "Reserve Now" button is blue[span_2](end_span).[span_5](end_span)
+* [span_6](start_span)[span_3](start_span)RE-LOGIN: If the button is gray, sign out and sign back into the app[span_3](end_span).[span_6](end_span)
+* [span_7](start_span)[span_4](start_span)PASSWORD RESET: Reset passwords via the Guest Account Admin Tool if forgotten[span_4](end_span).[span_7](end_span)
+* [span_8](start_span)[span_5](start_span)ACCOUNT HOLD: If a "Your account is on hold" message appears, refresh the guest's folio in Fidelio and check charging privileges[span_5](end_span).[span_8](end_span)
+* [span_6](start_span)COPPA RULES: Guests under 13 cannot use chat[span_6](end_span). [span_9](start_span)[span_7](start_span)Exceptions: Austria (14+), Germany, Hungary, Lithuania, Netherlands (16+)[span_7](end_span).[span_9](end_span)
+* [span_10](start_span)[span_8](start_span)TABLETS: The app does not support iPads or tablets; no troubleshooting is possible[span_8](end_span).[span_10](end_span)
+* [span_11](start_span)[span_9](start_span)LOGIN ISSUES: If issues persist, forget the WiFi-Guest connection and sign back in on login.com[span_9](end_span).[span_11](end_span)
+* [span_12](start_span)[span_10](start_span)[span_11](start_span)FAILED DOWNLOADS: If the app won't download from the captive portal, reset the user's app download plan limit on the iCafe Dashboard[span_10](end_span)[span_11](end_span).[span_12](end_span)
 
 ### [CATEGORY: IPHONE / iOS ONLY]
-* [span_12](start_span)VPN SETTINGS: Go to Settings > General > VPN & Device Management[span_12](end_span). 
-  ![VPN](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png)
-* WIFI PRIVACY: Go to Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ. [span_13](start_span)Turn off "Private Wifi Address" and "Limit IP Address"[span_13](end_span). 
+* [span_13](start_span)[span_12](start_span)VPN SETTINGS: Go to Settings > General > VPN & Device Management[span_12](end_span).[span_13](end_span)
+![VPN](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone2.png)
+* [span_13](start_span)WIFI PRIVACY: Go to Settings > Wifi > WiFi-Guest-”SHIP_NAME” > ⓘ. [span_14](start_span)Turn off "Private Wifi Address" and "Limit IP Address"[span_13](end_span).[span_14](end_span)
   ![Privacy](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/iphone1.png)
-* [span_14](start_span)PRIVATE RELAY: Must be turned off for the app to function correctly[span_14](end_span).
-* [span_15](start_span)CALENDAR SETTINGS: Ensure Gregorian is selected in Settings > Language & Region > Calendar[span_15](end_span).
-* OS REQUIREMENTS: Requires iOS 16 or higher. [span_16](start_span)Check in Settings > General > About[span_16](end_span).
-* [span_17](start_span)KNOWN ISSUE: Most iPhones get an error on the “Stateroom” screen; there is currently no fix[span_17](end_span).
+* [span_15](start_span)[span_14](start_span)PRIVATE RELAY: Must be turned off for the app to function correctly[span_14](end_span).[span_15](end_span)
+* [span_16](start_span)[span_15](start_span)CALENDAR SETTINGS: Ensure Gregorian is selected in Settings > Language & Region > Calendar[span_15](end_span).[span_16](end_span)
+* [span_16](start_span)OS REQUIREMENTS: Requires iOS 16 or higher. [span_17](start_span)Check in Settings > General > About[span_16](end_span).[span_17](end_span)
+* [span_18](start_span)[span_17](start_span)KNOWN ISSUE: Most iPhones get an error on the “Stateroom” screen; there is currently no fix[span_17](end_span).[span_18](end_span)
 
 ### [CATEGORY: ANDROID ONLY]
-* [span_20](start_span)TURN OFF/REMOVE VPN: 
-    1) Open Settings: Go to your device's Settings app.
-    2) Tap on Network & Internet (or Connections on some devices).
-    3) More Connection Settings.
-    4) VPN: Select VPN to see the list of configured VPNs.
-    5) Tap on the settings icon next to the active VPN.
-    6) Turn off the toggle to disable the VPN temporarily.
-
-* [span_21](start_span)TURN OFF/REMOVE DNS: Navigate to Settings > Connections > More connection settings. [span_18](start_span)Ensure VPN is checked and Private DNS is turned Off[span_21](end_span). 
-  ![Android Settings]https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png
-* [span_22](start_span)MAC ADDRESS: Go to Settings > Connections > Wifi > WiFi-Guest-”SHIP_NAME” > Advanced. [span_19](start_span)Change MAC type to "Device/Phone MAC" instead of Randomized[span_22](end_span). 
+* [span_30](start_span)REMOVE/TURN OFF VPN: 1) Open Settings. 2) Tap Network & Internet (or Connections). 3) More Connection Settings. 4) VPN: Select VPN. 5) Tap the settings icon. 6) Turn off toggle[span_30](end_span).
+* [span_18](start_span)VPN & DNS: Navigate to Settings > Connections > More connection settings. [span_19](start_span)Ensure VPN is checked and Private DNS is turned Off[span_18](end_span).[span_19](end_span)
+![Android Settings](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android2.png)
+* [span_19](start_span)MAC ADDRESS: Go to Settings > Connections > Wifi > WiFi-Guest-”SHIP_NAME” > Advanced. [span_20](start_span)Change MAC type to "Device/Phone MAC" instead of Randomized[span_19](end_span).[span_20](end_span)
   ![MAC](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/Android1.png)
-* [span_23](start_span)APP STORAGE: Go to Settings > Apps > Royal > Storage and select "Clear cache and data"[span_23](end_span).
-* [span_24](start_span)DATE & TIME: Automatic Date & Time must be ON in Settings > General Management > Date & Time[span_24](end_span).
-* [span_25](start_span)MAP/DECK FIX: If maps show as "0" or blank, turn off Private DNS and Clear app storage[span_25](end_span).
-* [span_26](start_span)GOOGLE PLAY: Ensure Google Play Services is installed and updated[span_26](end_span).
-* [span_27](start_span)OS REQUIREMENTS: Requires Android 7.0 or higher[span_27](end_span).
-* [span_28](start_span)[span_25](start_span)Check in Settings > About phone > Software information[span_28](end_span).
+* [span_21](start_span)[span_20](start_span)APP STORAGE: Go to Settings > Apps > Royal > Storage and select "Clear cache and data"[span_20](end_span).[span_21](end_span)
+* [span_22](start_span)[span_21](start_span)DATE & TIME: Automatic Date & Time must be ON in Settings > General Management > Date & Time[span_21](end_span).[span_22](end_span)
+* [span_23](start_span)[span_22](start_span)MAP/DECK FIX: If maps show as "0" or blank, turn off Private DNS and Clear app storage[span_22](end_span).[span_23](end_span)
+* [span_24](start_span)[span_23](start_span)GOOGLE PLAY: Ensure Google Play Services is installed and updated[span_23](end_span).[span_24](end_span)
+* [span_24](start_span)OS REQUIREMENTS: Requires Android 7.0 or higher. [span_25](start_span)Check in Settings > About phone > Software information[span_24](end_span).[span_25](end_span)
 
 ### [CATEGORY: TOOLS & ADMIN]
-* [span_29](start_span)GA TOOL (Guest Admin Tool): Used to verify email links, upcoming cruises, and correct names[span_29](end_span). 
-  ![GA Tool](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png)
-* [span_30](start_span)UNLINKING: If the correct name is selected but the app fails, tap "Unlink" and manually link the booking again in the GA Tool[span_30](end_span).
-* [span_31](start_span)PHOTO ISSUES: If guests see a "dark room" message, check the GA Tool linkage and request an IT restart of the photograph server if necessary[span_31](end_span).
+* [span_26](start_span)[span_26](start_span)GA TOOL (Guest Admin Tool): Used to verify email links, upcoming cruises, and correct names[span_26](end_span).[span_26](end_span)
+ ![GA Tool](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png)
+* [span_27](start_span)[span_27](start_span)UNLINKING: If the correct name is selected but the app fails, tap "Unlink" and manually link the booking again in the GA Tool[span_27](end_span).[span_27](end_span)
+* [span_28](start_span)[span_28](start_span)PHOTO ISSUES: If guests see a "dark room" message, check the GA Tool linkage and request an IT restart of the photograph server if necessary[span_28](end_span).[span_28](end_span)
+*
