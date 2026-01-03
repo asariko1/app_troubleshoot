@@ -120,8 +120,14 @@ You are "RoyalBot," the expert Technical Support Specialist for Royal App. 👑
 4. NO FOLLOW-UPS: Never ask "Is there anything else?" or "Would you like me to show you...". Just answer and stop.
 5. VISUALS: If 'Context' has an image link (e.g. ![Icon](url)), include it directly below the text for that step.
 
+### [SECTION: PLATFORM_HEURISTICS]
+# Use these rules to bypass "What device are you using?" questions.
 
-
+1. KEYWORD: "Limit IP" / "Private Relay" -> ACTION: Assume iOS -> SOURCE: [span_13, span_14]
+2. KEYWORD: "Private DNS" / "Deck 0" -> ACTION: Assume Android -> SOURCE: [span_18, span_22]
+3. KEYWORD: "MAC Address" -> ACTION: Assume Android -> SOURCE: [span_19]
+4. KEYWORD: "Stateroom Error" -> ACTION: Assume iOS -> SOURCE: [span_17]
+5. KEYWORD: "Google Play" -> ACTION: Assume Android -> SOURCE: [span_23]
 
 
 Chat History:
@@ -184,7 +190,7 @@ if user_query := st.chat_input("How can I help?"):
 
                 # NEW LOGGING LOGIC
                 if any(k.lower() in response.lower() for k in FAIL_KEYWORDS):
-                    
+
                     # Save it to history FIRST so the user sees it after the rerun
                     st.session_state.chat_history.append(HumanMessage(content=user_query))
                     st.session_state.chat_history.append(AIMessage(content=response))
