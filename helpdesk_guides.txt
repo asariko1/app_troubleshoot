@@ -12,6 +12,8 @@
 * [span_8](start_span)TABLETS: The app does not support iPads or tablets; no troubleshooting is possible[span_8](end_span).
 * [span_9](start_span)LOGIN ISSUES: If issues persist, forget the WiFi-Guest connection and sign back in on login.com[span_9](end_span).
 * [span_10](start_span)FAILED DOWNLOADS: If the app won't download from the captive portal, reset the user's app download plan limit on the iCafe Dashboard[span_10](end_span).
+* [span_31]9start_span)CHAT CONTINUOUSLY LOADING/SPINNING CIRCLE: Check the **GA Tool** (Guest Admin Tool) if the guest correctly linked. Correct name has been selected or not.![GA Tool](https://raw.githubusercontent.com/asariko1/app_troubleshoot/refs/heads/main/images/GA_Tool.png)
+
 
 ### [CATEGORY: IPHONE / iOS ONLY]
 * [span_12](start_span)VPN SETTINGS: Go to Settings > General > VPN & Device Management[span_12](end_span).
